@@ -11,8 +11,8 @@ import argparse
 import os
 import math
 from torch.optim.lr_scheduler import ReduceLROnPlateau
-import matplotlib.pyplot as plt  # Added for plotting
-import numpy as np              # Added for plotting
+import matplotlib.pyplot as plt  
+import numpy as np             
 import random
 
 def add_gaussian_noise(histogram, mean=0, k=0.1):
@@ -28,7 +28,7 @@ def add_gaussian_noise(histogram, mean=0, k=0.1):
         Augmented histogram tensor
     """
     # Calculate standard deviation based on bin count
-    bin_count = histogram.shape[-1]  # Assuming last dimension is bin count
+    bin_count = histogram.shape[-1]  
     std = k * (bin_count)
     
     # Generate Gaussian noise
@@ -134,8 +134,8 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, scheduler
                 'train_loss': epoch_train_loss,
                 'val_loss': epoch_val_loss,
                 'lr': current_lr,
-                'train_loss_history': history['train_loss'],  # Save complete history
-                'val_loss_history': history['val_loss'],      # Save complete history
+                'train_loss_history': history['train_loss'],  
+                'val_loss_history': history['val_loss'],     
             }, best_model_path)
             print(f"Best model saved to {best_model_path} with validation loss: {best_val_loss:.4f}")
         
@@ -151,8 +151,8 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, scheduler
                 'train_loss': epoch_train_loss,
                 'val_loss': epoch_val_loss,
                 'lr': current_lr,
-                'train_loss_history': history['train_loss'],  # Save complete history
-                'val_loss_history': history['val_loss'],      # Save complete history
+                'train_loss_history': history['train_loss'], 
+                'val_loss_history': history['val_loss'],     
             }, checkpoint_path)
             print(f"Checkpoint saved to {checkpoint_path}")
             
@@ -252,7 +252,7 @@ if __name__ == "__main__":
 
     # Define separate folders for training and validation
     train_folders = [f"folder_{i}" for i in range(1, 10)]
-    val_folders = ["folder_val"]  # Use the dedicated validation folder
+    val_folders = ["folder_val"]  
 
     # Create separate datasets for training and validation
     train_dataset = HistogramDataset(
@@ -349,10 +349,10 @@ if __name__ == "__main__":
         optimizer,
         scheduler,
         num_epochs=args.epochs,
-        start_epoch=start_epoch,  # New parameter
+        start_epoch=start_epoch,  
         save_dir=args.save_dir,
         save_interval=args.save_interval,
-        history=history  # New parameter
+        history=history 
     )
 
     # Plot and save the training history
