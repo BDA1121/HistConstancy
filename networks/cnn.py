@@ -16,13 +16,13 @@ class ConstancyNetwork(nn.Module):
 
         # Set the network parameters
         self.histograms_per_image = 4
-        self.filter_size = 96  # Adjusted filter size
+        self.filter_size = 96 
         self.kernel_size = 5
-        self.stride = 1  # Reduced stride to maintain spatial dimensions
+        self.stride = 1  
         self.pool_kernel = 2
         self.pool_stride = 2
-        self.convolutions_post_concat = 2  # Reduced to avoid over-shrinking
-        self.convolutions_post_pool = 2  # Reduced to avoid over-shrinking
+        self.convolutions_post_concat = 2  
+        self.convolutions_post_pool = 2  
         self.bucket_size = 128
         self.dropout_rate = dropout_rate
 
