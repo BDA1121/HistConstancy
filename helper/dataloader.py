@@ -4,8 +4,8 @@ import os
 import torch
 from torch.utils.data import Dataset, DataLoader
 from hist.Depth_Anything_V2.pipeline import load_depth_anything_model, infer_depth
-from colored_test import compute_surface_normals, colorize_normals, create_normal_weights
-from weighted_hist import remove_far_objects,calculate_weighted_2d_histograms_optimized
+from helper.colored_test import compute_surface_normals, colorize_normals, create_normal_weights
+from helper.weighted_hist import remove_far_objects,calculate_weighted_2d_histograms_optimized
 from PIL import Image
 import pandas as pd
 

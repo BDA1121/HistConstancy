@@ -23,13 +23,13 @@ def get_angular_error(output, ground_truth):
     ground_truth = ground_truth.type(torch.double)
     
     # # Normalize the vectors
-    # output_normalized = F.normalize(output, p=2, dim=1)
-    # ground_truth_normalized = F.normalize(ground_truth,p=2,dim=1)
+    output_normalized = F.normalize(output, p=2, dim=1)
+    ground_truth_normalized = F.normalize(ground_truth,p=2,dim=1)
     
     # Set up cosine similarity
     cosine_similarity = torch.nn.CosineSimilarity(dim=1, eps=1e-6)
     # Get cosine similarity scores
-    cos_sim_errors = cosine_similarity(output, ground_truth)
+    cos_sim_errors = cosine_similarity(output_normalized, ground_truth_normalized)
     # Take inverse cosine to get angular errors
     angular_errors_radians = torch.arccos(cos_sim_errors)
     angular_errors_degrees = radians_to_degrees(angular_errors_radians)

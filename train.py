@@ -3,9 +3,9 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 # from dataloader import HistogramDataset
-from multidataloader import HistogramDataset
-from cnn import ConstancyNetwork
-from networks import CustomGoogleNet, get_loss_function
+from networks.multidataloader import HistogramDataset
+from networks.cnn import ConstancyNetwork
+from networks.networks import CustomGoogleNet, get_loss_function
 from tqdm import tqdm
 import argparse
 import os
@@ -229,9 +229,9 @@ if __name__ == "__main__":
                         help='Weight decay (L2 penalty)')
     parser.add_argument('--patience', type=int, default=10,
                         help='Patience for learning rate scheduler')
-    parser.add_argument('--train_csv', type=str, default='/home/balamurugan.d/src/train_250310_10x.csv',
+    parser.add_argument('--train_csv', type=str, default='/home/balamurugan.d/src/annotations/train.csv',
                         help='Path to training CSV file')
-    parser.add_argument('--val_csv', type=str, default='/home/balamurugan.d/src/val_250310_10x.csv',
+    parser.add_argument('--val_csv', type=str, default='/home/balamurugan.d/src/annotations/val.csv',
                         help='Path to validation CSV file')
     parser.add_argument('--resume', type=str, default=None,
                         help='Path to checkpoint file to resume training from')

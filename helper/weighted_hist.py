@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from scipy import stats
 import time
-from tdhist import build_planar_axes, get_min_max_projected_boundaries, get_hist_upper_bound, get_plane_projected_histogram
+from helper.tdhist import build_planar_axes, get_min_max_projected_boundaries, get_hist_upper_bound, get_plane_projected_histogram
 from hist.Depth_Anything_V2.pipeline import load_depth_anything_model, infer_depth 
-from colored_test import compute_surface_normals,colorize_normals,create_normal_weights
+from helper.colored_test import compute_surface_normals,colorize_normals,create_normal_weights
 
 def linear_to_log(image):
     """Converts a linear image to a log-encoded image."""

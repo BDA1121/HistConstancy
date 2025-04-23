@@ -3,9 +3,9 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 # from dataloader import HistogramDataset
-from multidataloader import HistogramDataset
-from cnn import ConstancyNetwork
-from networks import CustomGoogleNet, get_loss_function
+from networks.multidataloader import HistogramDataset
+from networks.cnn import ConstancyNetwork
+from networks.networks import CustomGoogleNet, get_loss_function
 from tqdm import tqdm
 import argparse
 import os
