@@ -125,7 +125,7 @@ def add_gaussian_noise(histogram, mean=0, k=0.1):
     augmented_histogram = torch.clamp(augmented_histogram, min=0.0)
     # rand_val = random.random()
     rand_val = 0.1
-    if rand_val > 1:
+    if rand_val > 0.5:
         return augmented_histogram
     return histogram
 

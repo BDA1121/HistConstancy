@@ -225,7 +225,7 @@ if __name__ == "__main__":
                         help='Batch size for data loading')
     parser.add_argument('--transform', type=str, default='log', choices=['tan', 'log', 'None'],
                         help='Transform function for histogram')
-    parser.add_argument('--checkpoint', type=str, default='/home/balamurugan.d/src/checkpoints/checkpoints_logRGB_5_extend/best_model.pth', 
+    parser.add_argument('--checkpoint', type=str, default='/home/balamurugan.d/src/checkpoints_logRGB_5_base/best_model.pth', 
                         help='checkpoint')
     parser.add_argument('--bins', type=int, default=64,
                         help='Number of bins for histograms')

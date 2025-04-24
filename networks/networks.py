@@ -48,7 +48,7 @@ def get_euclidean_distance(output, ground_truth):
     rooted = torch.sqrt(summed)
     return torch.mean(rooted)
 
-def combined_loss(output, target, angular_weight=0.02    , euclidean_weight=0.5):
+def combined_loss(output, target, angular_weight=0.7    , euclidean_weight=0.3):
     """
     Combined loss function with weighted angular and euclidean components
     
